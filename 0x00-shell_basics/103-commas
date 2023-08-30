@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -l -a | sort -t . -k 2,2n -k 1,1d -k 1.2,1d | sed -E ':a;N;$!ba;s/\n/,/g;s/(\.\/)?\.\//\1/;s/,$/\n/'
+(ls -A1 | sort | tr '\n' ',' | sed 's/,$/\n/') | awk -F'[/.]' '{if($2 == "") print $0","; else print $0"/,"}' | sort -t, -k1.1,1.1 -k1.2n -k1.3
