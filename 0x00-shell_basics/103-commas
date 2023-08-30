@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a1 --group-directories-first | LC_COLLATE=C sort -t/ -k1,1d -k1.2,1n -k1.1,1d | sed ':a;N;$!ba;s/\n/, /g'
+ls -a1 --group-directories-first | LC_COLLATE=C sort -t/ -k1,1d -k1.2,1n -k1.1,1d | tr '\n' ',' | sed 's/,$/\n/'
