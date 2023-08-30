@@ -1,17 +1,2 @@
 #!/bin/bash
-
-src_dir=$(pwd)           
-parent_dir=$(dirname "$src_dir")  
-
-for file in "$src_dir"/*.html; do
-    base_file=$(basename "$file")      
-    dest_file="$parent_dir/$base_file"   
-
-    if [ ! -e "$dest_file" ] || [ "$file" -nt "$dest_file" ]; then
-        cp "$file" "$dest_file"
-        echo "Copied: $base_file"
-    else
-        echo "Skipped: $base_file (Destination file exists and is up to date)"
-    fi
-done
-
+rsync -u --ignore-existing --include '*/' --include '*.html' --exclude '*' . ../
