@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -a1 | sort -t . -k 2,2n -k 1,1d -k 1.2,1d | sed -E ':a;N;$!ba;s/\n/,/g;s/(\.\/)?\.\//\1/;s/,$/\n/'
+ls -l -a | sort -t . -k 2,2n -k 1,1d -k 1.2,1d | sed -E ':a;N;$!ba;s/\n/,/g;s/(\.\/)?\.\//\1/;s/,$/\n/'
