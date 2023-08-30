@@ -1,3 +1,2 @@
 #!/bin/bash
 ls -p1a | sort -t / -k 2,2n -k 1,1d | tr '\n' ', ' | sed 's|, /|/|g' | sed 's|,$|\n|'
-
