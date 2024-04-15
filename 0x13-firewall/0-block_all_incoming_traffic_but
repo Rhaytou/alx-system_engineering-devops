@@ -1,4 +1,8 @@
-ufw llow 80/tcp
-ufw allow 443/tcp
+#!/bin/bash env
+# script that sets up a few firewall rules on web-01.
+
+ufw default deny incoming
 ufw allow 22/tcp
-ufw enableallow 80/tcp
+ufw allow 80/tcp
+ufw allow 443/tcp
+ufw enable
